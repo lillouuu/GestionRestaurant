@@ -18,10 +18,17 @@ public class CommandeService {
     public Commande getById(Long id) { return commandeRepository.findById(id).orElse(null); }
     public Commande save(Commande commande) { return commandeRepository.save(commande); }
     public void delete(Long id) { commandeRepository.deleteById(id); }
+
     public List<Commande> getByStatut(String statut) {
         return commandeRepository.findByStatut(statut);
     }
+
     public List<Commande> getByClient(int clientId) {
         return commandeRepository.findByClientId(clientId);
+    }
+
+    // Méthode manquante dans la version originale
+    public List<Commande> getByTable(int tableId) {
+        return commandeRepository.findByTableId(tableId);
     }
 }
