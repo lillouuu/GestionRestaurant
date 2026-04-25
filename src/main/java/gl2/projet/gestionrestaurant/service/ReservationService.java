@@ -16,7 +16,10 @@ public class ReservationService {
 
     public List<Reservation> getAll() { return reservationRepository.findAll(); }
     public Reservation getById(Long id) { return reservationRepository.findById(id).orElse(null); }
-    public Reservation save(Reservation reservation) { return reservationRepository.save(reservation); }
+    public Reservation save(Reservation reservation) {
+        Reservation saved = reservationRepository.save(reservation);
+        return reservationRepository.findById(saved.getId()).orElse(saved);
+    }
     public void delete(Long id) { reservationRepository.deleteById(id); }
     public List<Reservation> getByStatut(String statut) {
         return reservationRepository.findByStatut(statut);

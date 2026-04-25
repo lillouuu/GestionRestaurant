@@ -16,7 +16,10 @@ public class PlatService {
 
     public List<Plat> getAll() { return platRepository.findAll(); }
     public Plat getById(int id) { return platRepository.findById(id).orElse(null); }
-    public Plat save(Plat plat) { return platRepository.save(plat); }
+    public Plat save(Plat plat) {
+        Plat saved = platRepository.save(plat);
+        return platRepository.findById(saved.getId()).orElse(saved);
+    }
     public void delete(int id) { platRepository.deleteById(id); }
     public List<Plat> getByCategorie(int categorieId) {
         return platRepository.findByCategorieId(categorieId);
@@ -24,4 +27,5 @@ public class PlatService {
     public List<Plat> getDisponibles() {
         return platRepository.findByDisponibiliteTrue();
     }
+
 }

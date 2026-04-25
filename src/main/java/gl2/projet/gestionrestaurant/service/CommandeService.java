@@ -16,7 +16,10 @@ public class CommandeService {
 
     public List<Commande> getAll() { return commandeRepository.findAll(); }
     public Commande getById(Long id) { return commandeRepository.findById(id).orElse(null); }
-    public Commande save(Commande commande) { return commandeRepository.save(commande); }
+    public Commande save(Commande commande) {
+        Commande saved = commandeRepository.save(commande);
+        return commandeRepository.findById(saved.getId()).orElse(saved);
+    }
     public void delete(Long id) { commandeRepository.deleteById(id); }
 
     public List<Commande> getByStatut(String statut) {
