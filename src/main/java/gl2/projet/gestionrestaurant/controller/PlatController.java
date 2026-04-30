@@ -43,7 +43,10 @@ public class PlatController {
     public Plat create(@RequestBody Plat plat) {
         return platService.save(plat);
     }
-
+    @GetMapping("/search")
+    public List<Plat> search(@RequestParam String nom) {
+        return platService.searchByNom(nom);
+    }
     @PutMapping("/{id}")
     public ResponseEntity<Plat> update(@PathVariable int id, @RequestBody Plat updated) {
         Plat existing = platService.getById(id);

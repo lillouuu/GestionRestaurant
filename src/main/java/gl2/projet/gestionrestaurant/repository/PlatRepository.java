@@ -17,4 +17,5 @@ public interface PlatRepository extends JpaRepository<Plat, Integer> {
 
     // Plats disponibles d'une catégorie précise
     List<Plat> findByCategorieIdAndDisponibiliteTrue(int categorieId);
+    List<Plat> findByNomContainingIgnoreCase(String nom);
 }

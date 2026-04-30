@@ -6,10 +6,10 @@ public class CommandeLigne {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String note;
-    private int quantité;
+    private Integer quantité;
 
     // clé etrangere plat
     @ManyToOne
@@ -23,11 +23,11 @@ public class CommandeLigne {
 
     //Getters and Setters
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -39,11 +39,11 @@ public class CommandeLigne {
         this.note = note;
     }
 
-    public int getQuantité() {
+    public Integer getQuantité() {
         return quantité;
     }
 
-    public void setQuantité(int quantité) {
+    public void setQuantité(Integer quantité) {
         this.quantité = quantité;
     }
 

@@ -36,7 +36,7 @@ public class Commande {
 
     @ManyToOne
     @JoinColumn(name = "table_id")
-    private TableRestaurant table;
+    private TableRestaurant tableRestaurant;
 
     public Commande() {
     }
@@ -47,7 +47,7 @@ public class Commande {
         this.source = source;
         this.total = total;
         this.client = client;
-        this.table = table;
+        this.tableRestaurant = table;
     }
 
     // Getters and Setters
@@ -100,10 +100,10 @@ public class Commande {
     }
 
     public TableRestaurant getTable() {
-        return table;
+        return tableRestaurant;
     }
 
-    public void setTable(TableRestaurant table) {
-        this.table = table;
+    public void setTable(TableRestaurant tableRestaurant) {
+        this.tableRestaurant = tableRestaurant;
     }
 }

@@ -32,6 +32,6 @@ public class CommandeService {
 
     // Méthode manquante dans la version originale
     public List<Commande> getByTable(int tableId) {
-        return commandeRepository.findByTableId(tableId);
+        return commandeRepository.findByTableRestaurantId(tableId);
     }
 }

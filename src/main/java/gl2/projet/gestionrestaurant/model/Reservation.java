@@ -22,7 +22,7 @@ public class Reservation {
     private LocalDateTime dateHeure;
 
     @Column(name = "nombre_personnes")
-    private int nombrePersonnes;
+    private Integer nombrePersonnes;
 
     @Column(name = "statut")
     private String statut;  // EN_ATTENTE, CONFIRMEE, ANNULEE
@@ -67,11 +67,11 @@ public class Reservation {
         this.dateHeure = dateHeure;
     }
 
-    public int getNombrePersonnes() {
+    public Integer getNombrePersonnes() {
         return nombrePersonnes;
     }
 
-    public void setNombrePersonnes(int nombrePersonnes) {
+    public void setNombrePersonnes(Integer nombrePersonnes) {
         this.nombrePersonnes = nombrePersonnes;
     }
 

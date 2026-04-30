@@ -27,5 +27,8 @@ public class PlatService {
     public List<Plat> getDisponibles() {
         return platRepository.findByDisponibiliteTrue();
     }
+    public List<Plat> searchByNom(String nom) {
+        return platRepository.findByNomContainingIgnoreCase(nom);
+    }
 
 }

@@ -64,4 +64,5 @@ public class TableRestaurantController {
         tableService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
 }
